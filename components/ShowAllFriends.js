@@ -42,11 +42,6 @@ const ShowAllFriends = ({ item }) => {
   };
   return (
     <Pressable
-      onPress={() =>
-        navigation.navigate("Message", {
-          reciverId: item._id,
-        })
-      }
       style={{
         flexDirection: "row",
         padding: 8,

@@ -18,22 +18,22 @@ const Login = () => {
   const navigation = useNavigation();
   const { userId, setUserId } = useContext(UserType);
 
-  // useEffect(() => {
-  //   const checkLogin = async () => {
-  //     try {
-  //       const token = await AsyncStorage.getItem("auth-token");
-  //       if (token) {
-  //         navigation.replace("Home");
-  //       } else {
-  //         return;
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const token = await AsyncStorage.getItem("auth-token");
+        if (token) {
+          navigation.replace("Home");
+        } else {
+          return;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  //   checkLogin();
-  // }, []);
+    checkLogin();
+  }, []);
 
   const handlerLogin = async () => {
     try {

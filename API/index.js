@@ -35,11 +35,8 @@ app.listen(port, () => {
   console.log("server is listening on port 8080");
 });
 
-// app.get("/", (req, res) => {
-//   res.send("okok");
-// });
 
-app.use("/register", express.static(path.join(__dirname, "files/profile")));
+app.use("/files", express.static(path.join(__dirname, "files")));
 
 const storageProfile = multer.diskStorage({
   destination: function (req, file, cb) {
